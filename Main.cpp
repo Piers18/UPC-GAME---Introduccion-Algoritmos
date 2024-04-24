@@ -2,14 +2,28 @@
 
 using namespace std;
 
-void imprimir_menu(){
-    
+bool imprimir_menu(){
+    char valor = '\0';
+
+    cin>>valor;
+
+    if(valor != '\0'){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 int main(){
+    bool iniciar_partida = false;
 
     // Imprimir menu y seleccionar comarzar
-    imprimir_menu();
+    while (iniciar_partida == false){
+        iniciar_partida = imprimir_menu();
+
+    }
+
+
 
     return 0;
 }
