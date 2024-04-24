@@ -17,7 +17,7 @@ bool imprimir_menu(){
 int main(){
     bool iniciar_partida = false;
 
-    // Imprimir menu y seleccionar comarzar
+    // Imprimir menu y seleccionar comenzar
     while (iniciar_partida == false){
         iniciar_partida = imprimir_menu();
 
