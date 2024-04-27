@@ -4,4 +4,4 @@ Rrague es un juego cuyo objetivo es ganar las partidas y las batallas.
 
 -Tras ganar una batalla cada jugador acumula 100 puntos. Gana el jugador con mayor cantidad de puntos al finalizar todas las partidas.
 
-![yipi](https://github.com/Piers18/UPC-GAME---Introduccion-Algoritmos/assets/167626348/8ef8faaa-a51e-48e4-9718-6be6612a3beb)
+![Rraguemainmenu](https://github.com/Piers18/UPC-GAME---Introduccion-Algoritmos/assets/167626348/7884f99a-3bc2-4bc9-a777-935d7fadef0e)
