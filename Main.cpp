@@ -2,7 +2,6 @@
 #include <time.h>
 #include <stdlib.h>
 #include "Logo.h"
-#include "Posicion_cursor.h"
 using namespace std;
 
 int const filas_terminal = 50;
