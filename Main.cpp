@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include "Logo.h"
+#include "Posicion_cursor.h"
 using namespace std;
 
 int const filas_terminal = 50;
@@ -28,7 +29,7 @@ void definir_tamano_terminal(){
         SMALL_RECT windowSize = {0, 0, 99, 49}; //  filas: 50, columnas: 100 
         SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &windowSize);
     #else
-        // Establecer el tamaño de la ventana a 50x200
+        // Establecer el tamaño de la ventana a 50x100
         printf("\033[8;50;100t");
     #endif
 }
@@ -197,9 +198,9 @@ int main(){
     definir_tamano_terminal();
 
     //Imprimir el logo de la upc
-    //imprimir_logo_upc();
-
+    imprimir_logo_upc();
     dormir_terminal(5000);
+    limpiar_pantalla();
 
     // Imprime menu y lee opciones de menu
     while (iniciar_partida == false){
