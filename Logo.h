@@ -32,5 +32,5 @@ void imprimir_logo_upc(){
 	definir_posicion_cursor(20, 34); cout << "             -***************************************-         ";
 	definir_posicion_cursor(20, 35); cout << "                ***********************************            ";
 	definir_posicion_cursor(20, 36); cout << "                   *****************************               ";
-	definir_posicion_cursor(20, 37); cout << "                       *********************                   ";
+	definir_posicion_cursor(20, 37); cout << "                       *********************                   "<<endl;
 }
