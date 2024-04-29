@@ -13,7 +13,6 @@ int const columnas_terminal = 100;
 #else
     #include <unistd.h>
     #include <stdio.h>
-    #include <cstdio>
 #endif
 
 // Funcion para definir la altura y ancho de la terminal
