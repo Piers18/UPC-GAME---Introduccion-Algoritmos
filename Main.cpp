@@ -193,6 +193,9 @@ int main(){
 
     limpiar_pantalla();
 
+    // Definir tamano terminal
+    definir_tamano_terminal();
+
     //Imprimir el logo de la upc
     //imprimir_logo_upc();
 
