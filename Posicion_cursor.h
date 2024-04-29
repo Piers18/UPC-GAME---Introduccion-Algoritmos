@@ -5,6 +5,7 @@ using namespace std;
     #include <windows.h>
 #else
     #include <stdio.h>
+    #include <cstdio>
 #endif
 
 void definir_posicion_cursor();
