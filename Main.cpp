@@ -1,13 +1,37 @@
 #include <iostream>
 #include <time.h>
 #include <stdlib.h>
+#include "Logo.h"
 using namespace std;
+
+int const filas_terminal = 50;
+int const columnas_terminal = 100;
 
 #ifdef WINDOWS
     #include <windows.h>
 #else
     #include <unistd.h>
+    #include <stdio.h>
 #endif
+
+// Funcion para definir la altura y ancho de la terminal
+void definir_tamano_terminal(){
+    #ifdef WINDOWS
+        // Obtener el handle de la ventana de la consola
+        HWND consoleWindow = GetConsoleWindow();
+
+        // Obtener información del buffer de pantalla
+        CONSOLE_SCREEN_BUFFER_INFO screenBufferInfo;
+        GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &screenBufferInfo);
+
+        // Establecer el tamaño de la ventana
+        SMALL_RECT windowSize = {0, 0, 99, 49}; //  filas: 50, columnas: 100 
+        SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &windowSize);
+    #else
+        // Establecer el tamaño de la ventana a 50x200
+        printf("\033[8;50;100t");
+    #endif
+}
 
 // Funcion para dormir la terminal, le insertar como parametro el tiempo en milisec
 void dormir_terminal(int milisegundos){
@@ -166,6 +190,13 @@ int main(){
 
     // Semilla para la funcion que genera numero aleatorios
     srand(time(NULL));
+
+    limpiar_pantalla();
+
+    //Imprimir el logo de la upc
+    //imprimir_logo_upc();
+
+    dormir_terminal(5000);
 
     // Imprime menu y lee opciones de menu
     while (iniciar_partida == false){
