@@ -1,11 +1,12 @@
 #include <iostream>
 #include "Posicion_cursor.h"
+#include "Color.h"
 using namespace std;
 
 void imprimir_logo_upc();
 
 void imprimir_logo_upc(){
-
+	colorear(255,0,0);
 	definir_posicion_cursor(20, 11); cout << "                             **                               ";
 	definir_posicion_cursor(20, 12); cout << "                            ***                                ";
 	definir_posicion_cursor(20, 13); cout << "                          ******                               ";

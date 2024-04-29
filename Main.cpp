@@ -7,7 +7,7 @@ using namespace std;
 int const filas_terminal = 50;
 int const columnas_terminal = 100;
 
-#ifdef WINDOWS
+#ifdef _WIN32
     #include <windows.h>
 #else
     #include <unistd.h>
@@ -16,7 +16,7 @@ int const columnas_terminal = 100;
 
 // Funcion para definir la altura y ancho de la terminal
 void definir_tamano_terminal(){
-    #ifdef WINDOWS
+    #ifdef _WIN32
         // Obtener el handle de la ventana de la consola
         HWND consoleWindow = GetConsoleWindow();
 
@@ -35,7 +35,7 @@ void definir_tamano_terminal(){
 
 // Funcion para dormir la terminal, le insertar como parametro el tiempo en milisec
 void dormir_terminal(int milisegundos){
-    #ifdef WINDOWS
+    #ifdef _WIN32
         Sleep(milisegundos);
     #else
         usleep(milisegundos * 1000);
@@ -44,7 +44,7 @@ void dormir_terminal(int milisegundos){
 
 // Funcion para limpiar pantalla en linux o window o ios
 void limpiar_pantalla(){
-    #ifdef WINDOWS
+    #ifdef _WIN32
         system("cls");
     #else
         system ("clear");

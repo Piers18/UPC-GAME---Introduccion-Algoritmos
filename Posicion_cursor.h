@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#ifdef WINDOWS
+#ifdef _WIN32
     #include <windows.h>
 #else
     #include <stdio.h>
@@ -11,7 +11,7 @@ void definir_posicion_cursor();
 
 // Funcion para definir la posicion del cursor
 void definir_posicion_cursor(int x, int y){
-    #ifdef WINDOWS
+    #ifdef _WIN32
         // Obtener el handle de la ventana de la consola
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
