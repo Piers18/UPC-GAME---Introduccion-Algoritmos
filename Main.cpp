@@ -187,13 +187,15 @@ int main(){
         iniciar_partida = imprimir_menu();
 
         if(iniciar_partida == 2){
-            //imprimir_instrucciones();
+            limpiar_pantalla();
+            imprimir_instrucciones();
             dormir_terminal(5000);
             limpiar_pantalla();
         }
 
         if(iniciar_partida == 3){
-            //imprimir_creditos();
+            limpiar_pantalla();
+            imprimir_creditos();
             dormir_terminal(5000);
             limpiar_pantalla();
         }

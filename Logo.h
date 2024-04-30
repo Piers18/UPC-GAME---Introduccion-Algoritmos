@@ -14,6 +14,8 @@ void ganador_pc();
 void ganador_jugador_final();
 void ganador_pc_final();
 void alto_puntos();
+void imprimir_instrucciones();
+void imprimir_creditos();
 
 void imprimir_logo_upc(){
 	colorear(255,0,0);	// rojo
@@ -139,33 +141,33 @@ void ganador_pc(){
 void ganador_jugador_final(){
 
 	colorear(0,0,255);
-	definir_posicion_cursor(30, 2);  cout <<"*******    Ganador del juego   ********";
-	definir_posicion_cursor(40, 10);  cout << "       =@=                 ";
-	definir_posicion_cursor(40, 11);  cout << "       =@=        %#@      ";
-	definir_posicion_cursor(40, 12);  cout << "       =@=     =%#@@@.     ";
-	definir_posicion_cursor(40, 13);  cout << "       =@=         #@.     ";
-	definir_posicion_cursor(40, 14);  cout << "       =@=         #@.     ";
-	definir_posicion_cursor(40, 15);  cout << "       =@=         #@.     ";
-	definir_posicion_cursor(40, 16);  cout << "       =@=         #@.     ";
-	definir_posicion_cursor(40, 17);  cout << "       =@=         #@.     ";
-	definir_posicion_cursor(40, 18);  cout << "       =@=         #@.     ";
-	definir_posicion_cursor(40, 19);  cout << "  **+%#@*       *##@@%#*   ";
+	definir_posicion_cursor(30, 8);  cout <<"*******    Ganador del juego   ********";
+	definir_posicion_cursor(35, 10);  cout << "       =@=                 ";
+	definir_posicion_cursor(35, 11);  cout << "       =@=        %#@      ";
+	definir_posicion_cursor(35, 12);  cout << "       =@=     =%#@@@.     ";
+	definir_posicion_cursor(35, 13);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(35, 14);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(35, 15);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(35, 16);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(35, 17);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(35, 18);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(35, 19);  cout << "  **+%#@*       *##@@%#*   ";
 }
 
 void ganador_pc_final(){
 
 	colorear(0,0,255);
-	definir_posicion_cursor(30, 10);  cout <<"*******    Ganador del juego   ********";
-	definir_posicion_cursor(40, 10);  cout << "       =@=                  ";
-	definir_posicion_cursor(40, 11);  cout << "       =@=         .:--.    ";
-	definir_posicion_cursor(40, 12);  cout << "       =@=        #%**#@#.  ";
-	definir_posicion_cursor(40, 13);  cout << "       =@=             =@=  ";
-	definir_posicion_cursor(40, 14);  cout << "       =@=             =@=  ";            
-	definir_posicion_cursor(40, 15);  cout << "       =@=            .%#   ";
-	definir_posicion_cursor(40, 16);  cout << "       =@=           :%#.   ";
-	definir_posicion_cursor(40, 17);  cout << "       =@=         .*@=     ";
-	definir_posicion_cursor(40, 18);  cout << "       =@=        -%#.      ";
-	definir_posicion_cursor(40, 19);  cout << "  **+%#@*       :@@%%%%%%.  ";
+	definir_posicion_cursor(30, 8);  cout <<"*******    Ganador del juego   ********";
+	definir_posicion_cursor(35, 10);  cout << "       =@=                  ";
+	definir_posicion_cursor(35, 11);  cout << "       =@=         .:--.    ";
+	definir_posicion_cursor(35, 12);  cout << "       =@=        #%**#@#.  ";
+	definir_posicion_cursor(35, 13);  cout << "       =@=             =@=  ";
+	definir_posicion_cursor(35, 14);  cout << "       =@=             =@=  ";            
+	definir_posicion_cursor(35, 15);  cout << "       =@=            .%#   ";
+	definir_posicion_cursor(35, 16);  cout << "       =@=           :%#.   ";
+	definir_posicion_cursor(35, 17);  cout << "       =@=         .*@=     ";
+	definir_posicion_cursor(35, 18);  cout << "       =@=        -%#.      ";
+	definir_posicion_cursor(35, 19);  cout << "  **+%#@*       :@@%%%%%%.  ";
 }
 
 void alto_puntos(int punt_jugador, int punt_computadora){
@@ -175,6 +177,25 @@ void alto_puntos(int punt_jugador, int punt_computadora){
 	definir_posicion_cursor(4, 3); cout << "           Puntaje Jugador 1: " << punt_jugador << "                        Puntaje Jugador 2: " << punt_computadora;
 	definir_posicion_cursor(4, 4); cout << "│                                                                                          │";
 	definir_posicion_cursor(4, 5); cout << "└──────────────────────────────────────────────────────────────────────────────────────────┘";
+}
+
+void imprimir_instrucciones(){
+	cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << "  INSTRUCCIONES" << endl;
+	cout << "  1.- Al iniciar el juego se generaran internamente la cantidad de partidas y batallas. " << endl;
+	cout << "  2.- Cada juego tendra entre 5 y 10 partidas, y a su vez cada partida tendra entre 5 y 8 batallas. " << endl;
+	cout << "  3.- La batalla la ganara el jugador que haya obtenido la carta con menor valor en el partido. " << endl;
+	cout << "  4.- El jugador ganador de cada batalla recibira 100 puntos . " << endl;
+	cout << "  5.- Ganara la totalidad del juego aquel que tenga la mayor puntuacion acumulada. " << endl;
+	cout << "  CASO EXCEPCIONAL: En caso haya un empate entre ambos jugadores la maquina decidira un ganador aleatoriamente" << endl;
+	cout << "  siendo parcial en las probabilidades" << endl;
+}
+
+void imprimir_creditos(){
+	definir_posicion_cursor(35, 5); cout<<" AUTORES"<<endl;
+	definir_posicion_cursor(30, 8); cout<<" AGUILAR ANTICONA PIERO ANTONIO"<<endl;
+	definir_posicion_cursor(30, 9); cout<<" ARMESTAR FELIPA ADRIAN ANDRES"<<endl;
+	definir_posicion_cursor(30, 10); cout<<" DIAZ MENDOZA SEBASTIAN"<<endl;
+
 }
 
 void carta_dibujada(int carta_numero, int identif){	
