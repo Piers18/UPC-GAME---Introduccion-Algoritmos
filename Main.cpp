@@ -97,9 +97,9 @@ void imprimir_carta_jugador(int carta_jugador){
 
 }
 
-// Genera un numero aleatorio para las cartas (entre 1 y 13)
+// Genera un numero aleatorio para las cartas (entre 0 y 9)
 int generar_numero_para_carta(){
-    int min = 1, max = 13;
+    int min = 0, max = 9;
     int numero_de_carta;
 
     numero_de_carta = generar_numero_aleatorio(min, max);
@@ -129,16 +129,25 @@ int generar_numero_partidas(){
 
 
 // Imprime el menu y sus opciones ademas verifica que la opcion ingresada es validad
-bool imprimir_menu(){
+int imprimir_menu(){
     int valor = 0;
 
-    cout<<"Escribe 1 para jugar: ";
+    // Imprime el nombre del juego y las opciones del primer menu
+    imprimir_menu_rrague();
+
     cin>>valor;
 
     if(valor == 1){
-        return true;
+        return 1;
+    }else if(valor == 2){
+        return 2;
+    }else if(valor == 3){
+        return 3;
+    }else if(valor == 0){
+        return 0;
     }else{
-        return false;
+        valor = imprimir_menu();
+        return valor;
     }
 }
 
@@ -182,8 +191,16 @@ void decidir_ganador_juego(int puntos_jugador, int puntos_computadora){
     }
 }
 
+
+
+
+
+
+
+/* Comienzo del a funcion principal del video juego */
+
 int main(){
-    bool iniciar_partida = false;
+    int iniciar_partida = 2;
     int carta_jugador, carta_computadora;
     int numero_de_partidas, numero_batallas;
     int puntos_jugador = 0, puntos_computadora = 0;
@@ -198,71 +215,88 @@ int main(){
 
     //Imprimir el logo de la upc
     imprimir_logo_upc();
-    dormir_terminal(5000);
+    dormir_terminal(3000);
     limpiar_pantalla();
 
     // Imprime menu y lee opciones de menu
-    while (iniciar_partida == false){
-
+    while ((iniciar_partida == 2) || (iniciar_partida == 3)){
         iniciar_partida = imprimir_menu();
+
+        if(iniciar_partida == 2){
+            //imprimir_instrucciones();
+            dormir_terminal(5000);
+            limpiar_pantalla();
+        }
+
+        if(iniciar_partida == 3){
+            //imprimir_creditos();
+            dormir_terminal(5000);
+            limpiar_pantalla();
+        }
 
     }
 
-    // Obtenre el numero aletaorio de partidas
-    numero_de_partidas = generar_numero_partidas();
+    if(iniciar_partida == 0){
+        return 0;
+    }
 
-    // Obtener un numero aleatorio de batallas
-    numero_batallas = generar_numero_batallas();
+    if(iniciar_partida == 1){
+        // Obtenre el numero aletaorio de partidas
+        numero_de_partidas = generar_numero_partidas();
 
-
-    for(int i=1; i<=numero_de_partidas; i++){
-
-        limpiar_pantalla();
-
-        // Presentar partida
-        imprimir_inicio_partida(i);
-
-        dormir_terminal(2000);
-        limpiar_pantalla();
-
-        for(int j=1; j<=numero_batallas; j++){
-
-            // Imprimir el numero de partida
-            imprimir_partida_actual(i);
-
-            // Imprimir en que batalla estamos
-            imprimir_batalla_actual(j);
-
-            // Imprimir el score del jugador
-            imprimir_score_jugador(puntos_jugador);
-            
-            // Imprimir el score de la copmutadora
-            imprimir_score_computadora(puntos_computadora);
-
-            // Obtener un numero aletaorio para la carta del jugador y imprimirlo
-            carta_jugador = generar_numero_para_carta();
-            imprimir_carta_jugador(carta_jugador);
+        // Obtener un numero aleatorio de batallas
+        numero_batallas = generar_numero_batallas();
 
 
-            // Obtener un numero aletaorio para la carta de la computadora
-            carta_computadora = generar_numero_para_carta();
-            imprimir_carta_computadora(carta_computadora);
-
-            // Decidir al ganador de la batalla y asignar los puntajes
-            decidir_ganador_batalla(carta_jugador, carta_computadora, puntos_jugador, puntos_computadora);
-
-            
-            dormir_terminal(2000);
+        for(int i=1; i<=numero_de_partidas; i++){
 
             limpiar_pantalla();
 
+            // Presentar partida
+            imprimir_inicio_partida(i);
+
+            dormir_terminal(2000);
+            limpiar_pantalla();
+
+            for(int j=1; j<=numero_batallas; j++){
+
+                // Imprimir el numero de partida
+                imprimir_partida_actual(i);
+
+                // Imprimir en que batalla estamos
+                imprimir_batalla_actual(j);
+
+                // Imprimir el score del jugador
+                imprimir_score_jugador(puntos_jugador);
+                
+                // Imprimir el score de la copmutadora
+                imprimir_score_computadora(puntos_computadora);
+
+                // Obtener un numero aletaorio para la carta del jugador y imprimirlo
+                carta_jugador = generar_numero_para_carta();
+                imprimir_carta_jugador(carta_jugador);
+
+
+                // Obtener un numero aletaorio para la carta de la computadora
+                carta_computadora = generar_numero_para_carta();
+                imprimir_carta_computadora(carta_computadora);
+
+                // Decidir al ganador de la batalla y asignar los puntajes
+                decidir_ganador_batalla(carta_jugador, carta_computadora, puntos_jugador, puntos_computadora);
+
+                
+                dormir_terminal(2000);
+
+                limpiar_pantalla();
+
+            }
         }
+
+        limpiar_pantalla();
+
+        // Decidir al ganador del juego segun su puntaje
+        decidir_ganador_juego(puntos_jugador, puntos_computadora);
     }
-
-    limpiar_pantalla();
-
-    // Decidir al ganador del juego segun su puntaje
-    decidir_ganador_juego(puntos_jugador, puntos_computadora);
 
     return 0;
 }
