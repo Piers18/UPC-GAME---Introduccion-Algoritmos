@@ -24,11 +24,11 @@ void definir_tamano_terminal(){
         CONSOLE_SCREEN_BUFFER_INFO screenBufferInfo;
         GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &screenBufferInfo);
 
-        // Establecer el tamaño de la ventana
+        // Establecer el tamano de la ventana
         SMALL_RECT windowSize = {0, 0, 99, 49}; //  filas: 50, columnas: 100 
         SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &windowSize);
     #else
-        // Establecer el tamaño de la ventana a 50x100
+        // Establecer el tamano de la ventana a 50x100
         printf("\033[8;50;100t");
     #endif
 }
@@ -60,42 +60,7 @@ int generar_numero_aleatorio(int min, int max){
     return num;
 }
 
-// Imprime inicio de partida
-void imprimir_inicio_partida(int partida_actual){
-    cout<<"\tEstamos en la partida "<<partida_actual<<endl;
-}
 
-// Imprime el score del jugador
-void imprimir_score_jugador(int score_jugador){
-    cout<<"El puntaje del jugador es: "<<score_jugador<<endl;
-}
-
-// Imprime el score de la computadora
-void imprimir_score_computadora(int score_computadora){
-    cout<<"El puntaje de la computadora es: "<<score_computadora<<endl;
-}
-
-// Imprime la partida actual
-void imprimir_partida_actual(int partida_actual){
-    cout<<"La partida actual es: "<<partida_actual<<endl;
-}
-
-// Imprime la batalla actual
-void imprimir_batalla_actual(int batalla_actual){
-    cout<<"La batalla actual es: "<<batalla_actual<<endl;
-}
-
-// Imprime la carta de la computadora
-void imprimir_carta_computadora(int carta_computadora){
-    cout<<"La carta de la computadora es: "<<carta_computadora<<endl;
-}
-
-// Imprime la carta del jugador
-void imprimir_carta_jugador(int carta_jugador){
-
-    cout<<"La carta del jugador es: "<<carta_jugador<<endl;
-
-}
 
 // Genera un numero aleatorio para las cartas (entre 0 y 9)
 int generar_numero_para_carta(){
@@ -158,20 +123,21 @@ void decidir_ganador_batalla(int carta_jugador, int carta_computadora, int &punt
     if(carta_jugador<carta_computadora){
         puntos_jugador += 100;
 
-        cout<<"El ganador de la ronda es el jugador"<<endl;
+        ganador_jugador();
+        
     }else if(carta_jugador>carta_computadora){
         puntos_computadora += 100;
         
-        cout<<"El ganador de la ronda es la computadora"<<endl;
+        ganador_pc();
     }else if(carta_jugador == carta_computadora){
         if(azar_empate>5){
             puntos_jugador += 100;
 
-            cout<<"El ganador de la ronda es el jugador"<<endl;
+            ganador_jugador();
         }else{
             puntos_computadora += 100;
         
-            cout<<"El ganador de la ronda es la computadora"<<endl;
+            ganador_pc();
         }
     }
 
@@ -179,15 +145,12 @@ void decidir_ganador_batalla(int carta_jugador, int carta_computadora, int &punt
 
 // Decide al ganador del juego
 void decidir_ganador_juego(int puntos_jugador, int puntos_computadora){
-    cout<<"Los puntos del jugador son: "<<puntos_jugador<<endl;
-    cout<<"Los puntos de la computadora son: "<<puntos_computadora<<endl;
+    alto_puntos(puntos_jugador, puntos_computadora);
 
     if(puntos_jugador>puntos_computadora){
-        cout<<"Felicitaciones ganaste el juego"<<endl;
+        ganador_jugador_final();
     }else if(puntos_jugador<puntos_computadora){
-        cout<<"Perdiste el juego"<<endl;
-    }else{
-        cout<<"Ups, nadie gano"<<endl;
+        ganador_pc_final();
     }
 }
 
@@ -204,6 +167,7 @@ int main(){
     int carta_jugador, carta_computadora;
     int numero_de_partidas, numero_batallas;
     int puntos_jugador = 0, puntos_computadora = 0;
+    int identificador_para_cartas = 1; // 1 es el jugador 1 y en numero 2 es para la computadora
 
     // Semilla para la funcion que genera numero aleatorios
     srand(time(NULL));
@@ -246,45 +210,44 @@ int main(){
         // Obtener un numero aleatorio de batallas
         numero_batallas = generar_numero_batallas();
 
+        limpiar_pantalla();
+        mensaje_empezemos();
+        dormir_terminal(3000);
+        limpiar_pantalla();
 
         for(int i=1; i<=numero_de_partidas; i++){
 
             limpiar_pantalla();
 
-            // Presentar partida
-            imprimir_inicio_partida(i);
-
-            dormir_terminal(2000);
-            limpiar_pantalla();
-
             for(int j=1; j<=numero_batallas; j++){
 
-                // Imprimir el numero de partida
-                imprimir_partida_actual(i);
+                // Imprimir el numero de partida y batallas
+                encabezado(i, j);
 
-                // Imprimir en que batalla estamos
-                imprimir_batalla_actual(j);
+                // Imprimir el score del jugador y la computadora
+                pie_puntos(puntos_jugador, puntos_computadora);
 
-                // Imprimir el score del jugador
-                imprimir_score_jugador(puntos_jugador);
-                
-                // Imprimir el score de la copmutadora
-                imprimir_score_computadora(puntos_computadora);
 
                 // Obtener un numero aletaorio para la carta del jugador y imprimirlo
                 carta_jugador = generar_numero_para_carta();
-                imprimir_carta_jugador(carta_jugador);
+                identificador_para_cartas = 1;
+                carta_dibujada(carta_jugador, identificador_para_cartas);
 
 
                 // Obtener un numero aletaorio para la carta de la computadora
                 carta_computadora = generar_numero_para_carta();
-                imprimir_carta_computadora(carta_computadora);
+                identificador_para_cartas = 2;
+                carta_dibujada(carta_computadora, identificador_para_cartas);
+
+                dormir_terminal(3000);
+
+                limpiar_pantalla();
 
                 // Decidir al ganador de la batalla y asignar los puntajes
                 decidir_ganador_batalla(carta_jugador, carta_computadora, puntos_jugador, puntos_computadora);
 
-                
-                dormir_terminal(2000);
+
+                dormir_terminal(3000);
 
                 limpiar_pantalla();
 

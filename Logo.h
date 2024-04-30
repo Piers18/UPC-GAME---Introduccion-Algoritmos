@@ -5,9 +5,18 @@ using namespace std;
 
 void imprimir_logo_upc();
 void imprimir_menu_rrague();
+void mensaje_empezemos();
+void encabezado();
+void pie_puntos();
+void carta_dibujada();
+void ganador_jugador();
+void ganador_pc();
+void ganador_jugador_final();
+void ganador_pc_final();
+void alto_puntos();
 
 void imprimir_logo_upc(){
-	colorear(255,0,0);
+	colorear(255,0,0);	// rojo
 	definir_posicion_cursor(20, 11); cout << "                             **                               ";
 	definir_posicion_cursor(20, 12); cout << "                            ***                                ";
 	definir_posicion_cursor(20, 13); cout << "                          ******                               ";
@@ -61,4 +70,449 @@ void imprimir_menu_rrague(){
 	definir_posicion_cursor(5, 39); cout << "                                  [3] CREDITOS                                          ";
 	definir_posicion_cursor(5, 40); cout << "                                  [0] SALIR                                             ";
 	definir_posicion_cursor(5, 44); cout << "                                    --> ";
+}
+
+
+void mensaje_empezemos(){
+
+	colorear(0,0,255);
+	definir_posicion_cursor(4, 21); cout << "@######  @@@    @@@  @@#%@@* @%#####  #####%@      =@=       @@@+    .%@@   :#@#@%+   %@%**#@: ";
+	definir_posicion_cursor(4, 22); cout << "@        @##+  =##@  @%  .#@ @=           .#@     .@@@.      @+@@:   #@=@  =@@  -%@#  @+    :. ";
+	definir_posicion_cursor(4, 23); cout << "@        @*.@:.@.*@  @%   .@ @=           %@*     *@#@*      @==@%  =@# @  @@-   .@@  @=       ";
+	definir_posicion_cursor(4, 24); cout << "@        @*.@:.@.*@  @%   .@ @=           %@*     *@#@*      @==@%  =@# @  @@-   .@@  @=       ";
+	definir_posicion_cursor(4, 25); cout << "@@@@@@-  @* #@@* *@  @%.:=@@ @@@@@@#     :=      %@- +@%     @= .@@#@-  @  @*     =@  :*@@@#.  ";
+	definir_posicion_cursor(4, 26); cout << "@.....   @* :@%. *@  @@@@%+: @+.....    -@      +@*   %@+    @-  =@@*   @  @*     +@     :+%@= ";
+	definir_posicion_cursor(4, 27); cout << "@        @*  =-  *@  @%.     @=        -@@     :@@%###%@@:   @-   #%.   @  @%     #@        @@:";
+	definir_posicion_cursor(4, 28); cout << "@        @*      *@  @%      @=       =@@:     #@*:::::#@#   @-   :-    @  @@+   =@@        @@-";
+	definir_posicion_cursor(4, 29); cout << "@......  @*      *@  @#      @+.....  @@-....  @%.     :@@=  @-         @  -@@-.#@%-  =:. .-@# ";
+	definir_posicion_cursor(4, 30); cout << "@@@@@@@  @*      *@  @#      %@@@@@@  @@@@@@@  @=       +@%  @-         @   .+@@#=.   %@@@@@=  ";
+}
+
+void encabezado(int num_partida, int num_batalla){
+	colorear(128, 0, 255);
+	definir_posicion_cursor(4, 1); cout << "┌──────────────────────────────────────────────────────────────────────────────────────────┐";
+	definir_posicion_cursor(4, 2); cout << "│                                                                                          │";
+	definir_posicion_cursor(4, 3); cout << "│                              Partida " << num_partida << " - Batalla " << num_batalla << "                                       │";
+	definir_posicion_cursor(4, 4); cout << "│                                                                                          │";
+	definir_posicion_cursor(4, 5); cout << "└──────────────────────────────────────────────────────────────────────────────────────────┘";
+}
+
+void pie_puntos(int punt_jugador, int punt_computadora){
+	colorear(128, 0, 255);
+	definir_posicion_cursor(4, 46); cout << "┌──────────────────────────────────────────────────────────────────────────────────────────┐";
+	definir_posicion_cursor(4, 47); cout << "│                                                                                          │";
+	definir_posicion_cursor(4, 48); cout << "           Puntaje Jugador 1: " << punt_jugador << "                        Puntaje Jugador 2: " << punt_computadora;
+	definir_posicion_cursor(4, 49); cout << "│                                                                                          │";
+	definir_posicion_cursor(4, 50); cout << "└──────────────────────────────────────────────────────────────────────────────────────────┘";
+}
+
+void ganador_jugador(){
+
+	colorear(255,255,255);
+	definir_posicion_cursor(4, 21); cout << "**********  ********  *       *  *********  ******    *******  *********           *       *";
+	definir_posicion_cursor(4, 22); cout << "*           *      *  * *     *  *       *  *     *   *     *  *       *           *      **";
+	definir_posicion_cursor(4, 23); cout << "*           *      *  *   *   *  *       *  *      *  *     *  *       *           *     * *";
+	definir_posicion_cursor(4, 24); cout << "*           *      *  *    *  *  *       *  *      *  *     *  *       *           *    *  *";
+	definir_posicion_cursor(4, 25); cout << "*           *      *  *     * *  *       *  *      *  *     *  *       *           *   *   *";
+	definir_posicion_cursor(4, 26); cout << "**********  ********  *      **  *********  *      *  *     *  ********            *       *";
+	definir_posicion_cursor(4, 27); cout << "*        *  *      *  *       *  *       *  *      *  *     *  *    *              *       *";
+	definir_posicion_cursor(4, 28); cout << "*        *  *      *  *       *  *       *  *     *   *     *  *     *     ***     *       *";
+	definir_posicion_cursor(4, 29); cout << "*        *  *      *  *       *  *       *  *    *    *     *  *      *    *       *       *";
+	definir_posicion_cursor(4, 30); cout << "**********  *      *  *       *  *       *  ****      *******  *       *   *********       *";
+}
+
+void ganador_pc(){
+
+	colorear(255,255,255);
+	definir_posicion_cursor(4, 21); cout << "**********  *******  *       *  ********  ******    *******  *********           *   *******";
+	definir_posicion_cursor(4, 22); cout << "*           *     *  * *     *  *      *  *     *   *     *  *       *           *         *";
+	definir_posicion_cursor(4, 23); cout << "*           *     *  *   *   *  *      *  *      *  *     *  *       *           *         *";
+	definir_posicion_cursor(4, 24); cout << "*           *     *  *    *  *  *      *  *      *  *     *  *       *           *         *";
+	definir_posicion_cursor(4, 25); cout << "*           *     *  *     * *  *      *  *      *  *     *  *       *           *   *******";
+	definir_posicion_cursor(4, 26); cout << "**********  *******  *      **  ********  *      *  *     *  ********            *   *      ";
+	definir_posicion_cursor(4, 27); cout << "*        *  *     *  *       *  *      *  *      *  *     *  *    *              *   *      ";
+	definir_posicion_cursor(4, 28); cout << "*        *  *     *  *       *  *      *  *     *   *     *  *     *     ***     *   *      ";
+	definir_posicion_cursor(4, 29); cout << "*        *  *     *  *       *  *      *  *    *    *     *  *      *    *       *   *      ";
+	definir_posicion_cursor(4, 30); cout << "**********  *     *  *       *  *      *  ****      *******  *       *   *********   *******";
+}
+
+void ganador_jugador_final(){
+
+	colorear(0,0,255);
+	definir_posicion_cursor(30, 20);  cout <<"*******    Ganador del juego   ********";
+	definir_posicion_cursor(40, 30);  cout << "       =@=                 ";
+	definir_posicion_cursor(40, 31);  cout << "       =@=        %#@      ";
+	definir_posicion_cursor(40, 32);  cout << "       =@=     =%#@@@.     ";
+	definir_posicion_cursor(40, 33);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(40, 34);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(40, 35);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(40, 36);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(40, 37);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(40, 38);  cout << "       =@=         #@.     ";
+	definir_posicion_cursor(40, 39);  cout << "  **+%#@*       *##@@%#*   ";
+}
+
+void ganador_pc_final(){
+
+	colorear(0,0,255);
+	definir_posicion_cursor(30, 20);  cout <<"*******    Ganador del juego   ********";
+	definir_posicion_cursor(40, 30);  cout << "       =@=                  ";
+	definir_posicion_cursor(40, 31);  cout << "       =@=         .:--.    ";
+	definir_posicion_cursor(40, 32);  cout << "       =@=        #%**#@#.  ";
+	definir_posicion_cursor(40, 33);  cout << "       =@=             =@=  ";
+	definir_posicion_cursor(40, 34);  cout << "       =@=             =@=  ";            
+	definir_posicion_cursor(40, 35);  cout << "       =@=            .%#   ";
+	definir_posicion_cursor(40, 36);  cout << "       =@=           :%#.   ";
+	definir_posicion_cursor(40, 37);  cout << "       =@=         .*@=     ";
+	definir_posicion_cursor(40, 38);  cout << "       =@=        -%#.      ";
+	definir_posicion_cursor(40, 39);  cout << "  **+%#@*       :@@%%%%%%.  ";
+}
+
+void alto_puntos(int punt_jugador, int punt_computadora){
+	colorear(128, 0, 255);
+	definir_posicion_cursor(4, 1); cout << "┌──────────────────────────────────────────────────────────────────────────────────────────┐";
+	definir_posicion_cursor(4, 2); cout << "│                                                                                          │";
+	definir_posicion_cursor(4, 3); cout << "           Puntaje Jugador 1: " << punt_jugador << "                        Puntaje Jugador 2: " << punt_computadora;
+	definir_posicion_cursor(4, 4); cout << "│                                                                                          │";
+	definir_posicion_cursor(4, 5); cout << "└──────────────────────────────────────────────────────────────────────────────────────────┘";
+}
+
+void carta_dibujada(int carta_numero, int identif){	
+	int a;
+
+	if(identif == 1){
+		a = 5;
+	}else if(identif == 2){
+		a = 56;
+	}
+
+	if (carta_numero == 1) {
+
+		colorear(0, 255, 0);
+		definir_posicion_cursor(a, 11); cout << "++++=+++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 12); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 13); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 14); cout << "+++++++++++++++++++++++:.        .:+++++";
+		definir_posicion_cursor(a, 15); cout << "++++++++++++++++++-:                .-++";
+		definir_posicion_cursor(a, 16); cout << "+++++++++++++++-:                     .:";
+		definir_posicion_cursor(a, 17); cout << "+++++++++++++-.                         ";
+		definir_posicion_cursor(a, 18); cout << "+++++++++++-                            ";
+		definir_posicion_cursor(a, 19); cout << "+++++++++-.                             ";
+		definir_posicion_cursor(a, 20); cout << "++++++-            ******               ";
+		definir_posicion_cursor(a, 21); cout << "+++++:          .:*+++++*               ";
+		definir_posicion_cursor(a, 22); cout << "++++.           *+++++++*               ";
+		definir_posicion_cursor(a, 23); cout << "+++.           *****++++*               ";
+		definir_posicion_cursor(a, 24); cout << "                   *++++*             ++";
+		definir_posicion_cursor(a, 25); cout << "                   *++++*            +++";
+		definir_posicion_cursor(a, 26); cout << "                   *++++*            +++";
+		definir_posicion_cursor(a, 27); cout << "                   *++++*           =+++";
+		definir_posicion_cursor(a, 28); cout << "                   *++++*         .=++++";
+		definir_posicion_cursor(a, 29); cout << "                   ******        -++++++";
+		definir_posicion_cursor(a, 30); cout << "                               .=+++++++";
+		definir_posicion_cursor(a, 31); cout << "                            .+++++++++++";
+		definir_posicion_cursor(a, 32); cout << "+                         .-++++++++++++";
+		definir_posicion_cursor(a, 33); cout << "++.                    .-=++++++++++++++";
+		definir_posicion_cursor(a, 34); cout << "++.                  .-=++++++++++++++++";
+		definir_posicion_cursor(a, 35); cout << "+++++            .:+++++++++++++++++++++";
+		definir_posicion_cursor(a, 36); cout << ":+++=+++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 37); cout << ":+++=+++++++++++++++++++++++++++++++++++";
+
+
+
+	}
+	if (carta_numero == 2) {
+
+		colorear(0, 255, 0);
+		definir_posicion_cursor(a, 11); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 12); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 13); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 14); cout << "+++++++++++++++++++++++:.        .:+++++";
+		definir_posicion_cursor(a, 15); cout << "++++++++++++++++++-:                .*++";
+		definir_posicion_cursor(a, 16); cout << "+++++++++++++++-:                     .:";
+		definir_posicion_cursor(a, 17); cout << "+++++++++++++-.                         ";
+		definir_posicion_cursor(a, 18); cout << "+++++++++++-                            ";
+		definir_posicion_cursor(a, 19); cout << "+++++++++          *******              ";
+		definir_posicion_cursor(a, 20); cout << "+++++++.        ************            ";
+		definir_posicion_cursor(a, 21); cout << "++++:         ****    *******           ";
+		definir_posicion_cursor(a, 22); cout << "+++:          ****     ******           ";
+		definir_posicion_cursor(a, 23); cout << "++:           ****     ******          :";
+		definir_posicion_cursor(a, 24); cout << "+.                   *******          ++";
+		definir_posicion_cursor(a, 25); cout << ".                  ********           ++";
+		definir_posicion_cursor(a, 26); cout << "                 ********            +++";
+		definir_posicion_cursor(a, 27); cout << "                ********             +++";
+		definir_posicion_cursor(a, 28); cout << "               ************+        :+++";
+		definir_posicion_cursor(a, 29); cout << "              ***************      :++++";
+		definir_posicion_cursor(a, 30); cout << "                                .+++++++";
+		definir_posicion_cursor(a, 31); cout << "                              .+++++++++";
+		definir_posicion_cursor(a, 32); cout << "+                          .++++++++++++";
+		definir_posicion_cursor(a, 33); cout << "++.                     .-++++++++++++++";
+		definir_posicion_cursor(a, 34); cout << "++.                  .-+++++++++++++++++";
+		definir_posicion_cursor(a, 35); cout << "+++++            .:+++++++++++++++++++++";
+		definir_posicion_cursor(a, 36); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 37); cout << "++++++++++++++++++++++++++++++++++++++++";
+
+	}
+	if (carta_numero == 3) {
+
+		colorear(0, 255, 0);
+		definir_posicion_cursor(a, 11); cout << "++++=+++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 12); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 13); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 14); cout << "+++++++++++++++++++++++:.        .:+++++";
+		definir_posicion_cursor(a, 15); cout << "++++++++++++++++++-:                .*++";
+		definir_posicion_cursor(a, 16); cout << "+++++++++++++++-:                     .:";
+		definir_posicion_cursor(a, 17); cout << "+++++++++++++-.                        :";
+		definir_posicion_cursor(a, 18); cout << "+++++++++++-                            ";
+		definir_posicion_cursor(a, 19); cout << "+++++++++.        *********             ";
+		definir_posicion_cursor(a, 20); cout << "+++++=.       .**************           ";
+		definir_posicion_cursor(a, 21); cout << "++++=.        ****     *******          ";
+		definir_posicion_cursor(a, 22); cout << "+++=           **-     *******          ";
+		definir_posicion_cursor(a, 23); cout << "+++                   *******:          ";
+		definir_posicion_cursor(a, 24); cout << "++                **********:          :";
+		definir_posicion_cursor(a, 25); cout << ":                  **********.        ++";
+		definir_posicion_cursor(a, 26); cout << "             ***      *******        +++";
+		definir_posicion_cursor(a, 27); cout << "             ***      *******.      -+++";
+		definir_posicion_cursor(a, 28); cout << "             ***:..:********       +++++";
+		definir_posicion_cursor(a, 29); cout << "                *********         ++++++";
+		definir_posicion_cursor(a, 30); cout << "                                ++++++++";
+		definir_posicion_cursor(a, 31); cout << "                              .+++++++++";
+		definir_posicion_cursor(a, 32); cout << "+                          .++++++++++++";
+		definir_posicion_cursor(a, 33); cout << "++.                     .-++++++++++++++";
+		definir_posicion_cursor(a, 34); cout << "+++                  .-+++++++++++++++++";
+		definir_posicion_cursor(a, 35); cout << "+++++            .:+++++++++++++++++++++";
+		definir_posicion_cursor(a, 36); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 37); cout << "++++++++++++++++++++++++++++++++++++++++";
+
+	}
+	if (carta_numero == 4) {
+		colorear(0, 255, 0);
+		definir_posicion_cursor(a, 11); cout << "++++=+++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 12); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 13); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 14); cout << "+++++++++++++++++++++++:.        .:+++++";
+		definir_posicion_cursor(a, 15); cout << "++++++++++++++++++-:                .*++";
+		definir_posicion_cursor(a, 16); cout << "+++++++++++++++-:                     .:";
+		definir_posicion_cursor(a, 17); cout << "+++++++++++++-.                        :";
+		definir_posicion_cursor(a, 18); cout << "+++++++++++-                            ";
+		definir_posicion_cursor(a, 19); cout << "+++++++=.            *******            ";
+		definir_posicion_cursor(a, 20); cout << "++++++=             ********            ";
+		definir_posicion_cursor(a, 21); cout << "++++=             .*********            ";
+		definir_posicion_cursor(a, 22); cout << "++=              *++ +******           :";
+		definir_posicion_cursor(a, 23); cout << "+.              *++  +******          .=";
+		definir_posicion_cursor(a, 24); cout << ":              **+   +******          ==";
+		definir_posicion_cursor(a, 25); cout << "             **+:    :******         =+=";
+		definir_posicion_cursor(a, 26); cout << "            ****++++++*******        ++=";
+		definir_posicion_cursor(a, 27); cout << "            *****************       +++=";
+		definir_posicion_cursor(a, 28); cout << "                    *******       +++++=";
+		definir_posicion_cursor(a, 29); cout << "                    *******      ++++++=";
+		definir_posicion_cursor(a, 30); cout << "                                ++++++++";
+		definir_posicion_cursor(a, 31); cout << "                               +++++++++";
+		definir_posicion_cursor(a, 32); cout << "+                          .++++++++++++";
+		definir_posicion_cursor(a, 33); cout << "++.                     .-++++++++++++++";
+		definir_posicion_cursor(a, 34); cout << "++.                  .-+++++++++++++++++";
+		definir_posicion_cursor(a, 35); cout << "+++++            .:+++++++++++++++++++++";
+		definir_posicion_cursor(a, 36); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 37); cout << "++++++++++++++++++++++++++++++++++++++++";
+
+
+	}
+	if (carta_numero == 5) {
+
+		colorear(0, 255, 0);
+		definir_posicion_cursor(a, 11); cout << "++++=+++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 12); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 13); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 14); cout << "+++++++++++++++++++++++:.        .:+++++";
+		definir_posicion_cursor(a, 15); cout << "++++++++++++++++++-:                .*++";
+		definir_posicion_cursor(a, 16); cout << "+++++++++++++++-:                     .:";
+		definir_posicion_cursor(a, 17); cout << "++++++++++++-.                        ::";
+		definir_posicion_cursor(a, 18); cout << "+++++++++++-                           :";
+		definir_posicion_cursor(a, 19); cout << "++++++++.      *************            ";
+		definir_posicion_cursor(a, 20); cout << "++++++         ************             ";
+		definir_posicion_cursor(a, 21); cout << "++++          ***                       ";
+		definir_posicion_cursor(a, 22); cout << "+++           ***                       ";
+		definir_posicion_cursor(a, 23); cout << "++           **************            :";
+		definir_posicion_cursor(a, 24); cout << ":                     *******         ::";
+		definir_posicion_cursor(a, 25); cout << "                      *******         :+";
+		definir_posicion_cursor(a, 26); cout << "            ****      *******        .++";
+		definir_posicion_cursor(a, 27); cout << "            ****      *******       .+++";
+		definir_posicion_cursor(a, 28); cout << "             ***** *********       +++++";
+		definir_posicion_cursor(a, 29); cout << "             ************         ++++++";
+		definir_posicion_cursor(a, 30); cout << "                                ++++++++";
+		definir_posicion_cursor(a, 31); cout << "                              .+++++++++";
+		definir_posicion_cursor(a, 32); cout << "+                          .++++++++++++";
+		definir_posicion_cursor(a, 33); cout << "++.                     .-++++++++++++++";
+		definir_posicion_cursor(a, 34); cout << "++.                  .-+++++++++++++++++";
+		definir_posicion_cursor(a, 35); cout << "+++++            .:+++++++++++++++++++++";
+		definir_posicion_cursor(a, 36); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 37); cout << "++++++++++++++++++++++++++++++++++++++++";
+
+
+	}
+	if (carta_numero == 6) {
+
+		colorear(0, 255, 0);
+		definir_posicion_cursor(a, 11); cout << "++++=+++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 12); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 13); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 14); cout << "+++++++++++++++++++++++:.        .:+++++";
+		definir_posicion_cursor(a, 15); cout << "++++++++++++++++++-:                .*++";
+		definir_posicion_cursor(a, 16); cout << "+++++++++++++++-:                     .:";
+		definir_posicion_cursor(a, 17); cout << "++++++++++++-.                        ::";
+		definir_posicion_cursor(a, 18); cout << "+++++++++++-                           :";
+		definir_posicion_cursor(a, 19); cout << "++++++++.           *********           ";
+		definir_posicion_cursor(a, 20); cout << "++++++            ****     ****         ";
+		definir_posicion_cursor(a, 21); cout << "++++            ****      ****          ";
+		definir_posicion_cursor(a, 22); cout << "+++            ****                     ";
+		definir_posicion_cursor(a, 23); cout << "++            ************             :";
+		definir_posicion_cursor(a, 24); cout << ":            ***************          ::";
+		definir_posicion_cursor(a, 25); cout << "            ****        *****         :+";
+		definir_posicion_cursor(a, 26); cout << "            ****        *****        .++";
+		definir_posicion_cursor(a, 27); cout << "            ****      .*****        .+++";
+		definir_posicion_cursor(a, 28); cout << "            *******.*******        +++++";
+		definir_posicion_cursor(a, 29); cout << "             ************         ++++++";
+		definir_posicion_cursor(a, 30); cout << "                                ++++++++";
+		definir_posicion_cursor(a, 31); cout << "                              .+++++++++";
+		definir_posicion_cursor(a, 32); cout << "+                          .++++++++++++";
+		definir_posicion_cursor(a, 33); cout << "++.                     .-++++++++++++++";
+		definir_posicion_cursor(a, 34); cout << "++.                  .-+++++++++++++++++";
+		definir_posicion_cursor(a, 35); cout << "+++++            .:+++++++++++++++++++++";
+		definir_posicion_cursor(a, 36); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 37); cout << "++++++++++++++++++++++++++++++++++++++++";
+
+
+	}
+	if (carta_numero == 7) {
+
+
+		colorear(0, 255, 0);
+		definir_posicion_cursor(a, 11); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 12); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 13); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 14); cout << "+++++++++++++++++++++++:.         .+++++";
+		definir_posicion_cursor(a, 15); cout << "++++++++++++++++++:                 .*++";
+		definir_posicion_cursor(a, 16); cout << "+++++++++++++++:                      .:";
+		definir_posicion_cursor(a, 17); cout << "++++++++++++.                         ::";
+		definir_posicion_cursor(a, 18); cout << "+++++++++++                            :";
+		definir_posicion_cursor(a, 19); cout << "+++++++.      *****************         ";
+		definir_posicion_cursor(a, 20); cout << "++++++        *****************         ";
+		definir_posicion_cursor(a, 21); cout << "+++++           **************          ";
+		definir_posicion_cursor(a, 22); cout << "+++                  .*******          :";
+		definir_posicion_cursor(a, 23); cout << "+:                   *******          .:";
+		definir_posicion_cursor(a, 24); cout << "+.                  *******           .+";
+		definir_posicion_cursor(a, 25); cout << "                   *******            ++";
+		definir_posicion_cursor(a, 26); cout << "                  *******           .+++";
+		definir_posicion_cursor(a, 27); cout << "                 *******           .++++";
+		definir_posicion_cursor(a, 28); cout << "                *******           .+++++";
+		definir_posicion_cursor(a, 29); cout << "               *******           :++++++";
+		definir_posicion_cursor(a, 30); cout << ":                               ++++++++";
+		definir_posicion_cursor(a, 31); cout << "+                             .+++++++++";
+		definir_posicion_cursor(a, 32); cout << "++                         .++++++++++++";
+		definir_posicion_cursor(a, 33); cout << "+++++                   .-++++++++++++++";
+		definir_posicion_cursor(a, 34); cout << "+++++++++            .-+++++++++++++++++";
+		definir_posicion_cursor(a, 35); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 36); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 37); cout << "++++++++++++++++++++++++++++++++++++++++";
+
+
+	}
+	if (carta_numero == 8) {
+
+		colorear(0, 255, 0);
+		definir_posicion_cursor(a, 11); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 12); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 13); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 14); cout << "+++++++++++++++++++++++:.        .++++++";
+		definir_posicion_cursor(a, 15); cout << "+++++++++++++++++++:                .*++";
+		definir_posicion_cursor(a, 16); cout << "++++++++++++++++:                     +:";
+		definir_posicion_cursor(a, 17); cout << "+++++++++++++.                        ::";
+		definir_posicion_cursor(a, 18); cout << "++++++++++++       *******             :";
+		definir_posicion_cursor(a, 19); cout << "++++++++.       ************            ";
+		definir_posicion_cursor(a, 20); cout << "++++++       ******      ****           ";
+		definir_posicion_cursor(a, 21); cout << "++++        ******       ****           ";
+		definir_posicion_cursor(a, 22); cout << "+++          ****************           ";
+		definir_posicion_cursor(a, 23); cout << "++            **************           :";
+		definir_posicion_cursor(a, 24); cout << ":              **************         .:";
+		definir_posicion_cursor(a, 25); cout << "              ****************        :+";
+		definir_posicion_cursor(a, 26); cout << "             ******************      .++";
+		definir_posicion_cursor(a, 27); cout << "             ****       *******     .+++";
+		definir_posicion_cursor(a, 28); cout << "             ****        ******    +++++";
+		definir_posicion_cursor(a, 29); cout << "               *************      ++++++";
+		definir_posicion_cursor(a, 30); cout << "                   *******      ++++++++";
+		definir_posicion_cursor(a, 31); cout << "                              .+++++++++";
+		definir_posicion_cursor(a, 32); cout << "+                          .++++++++++++";
+		definir_posicion_cursor(a, 33); cout << "++.                     .-++++++++++++++";
+		definir_posicion_cursor(a, 34); cout << "++.                  .-+++++++++++++++++";
+		definir_posicion_cursor(a, 35); cout << "+++++            .:+++++++++++++++++++++";
+		definir_posicion_cursor(a, 36); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 37); cout << "++++++++++++++++++++++++++++++++++++++++";
+
+
+	}
+	if (carta_numero == 9) {
+
+
+		colorear(0, 255, 0);
+		definir_posicion_cursor(a, 11); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 12); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 13); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 14); cout << "++++++++++++++++++++++++.        .:+++++";
+		definir_posicion_cursor(a, 15); cout << "+++++++++++++++++++:                .*++";
+		definir_posicion_cursor(a, 16); cout << "++++++++++++++++:                     .:";
+		definir_posicion_cursor(a, 17); cout << "++++++++++++++.                        :";
+		definir_posicion_cursor(a, 18); cout << "++++++++++++    **********              ";
+		definir_posicion_cursor(a, 19); cout << "++++++++.      *****   *****            ";
+		definir_posicion_cursor(a, 20); cout << "+++++++      *******   ******           ";
+		definir_posicion_cursor(a, 21); cout << "+++++        *******   ******           ";
+		definir_posicion_cursor(a, 22); cout << "+++          *******   ******.         :";
+		definir_posicion_cursor(a, 23); cout << "+.            ******  :******.        .+";
+		definir_posicion_cursor(a, 24); cout << ":              **************.        :+";
+		definir_posicion_cursor(a, 25); cout << "                 ************         ++";
+		definir_posicion_cursor(a, 26); cout << "                      .******         ++";
+		definir_posicion_cursor(a, 27); cout << "              ****    ******        ++++";
+		definir_posicion_cursor(a, 28); cout << "               ****.  ******      ++++++";
+		definir_posicion_cursor(a, 29); cout << "                 ********        +++++++";
+		definir_posicion_cursor(a, 30); cout << "                                ++++++++";
+		definir_posicion_cursor(a, 31); cout << "                               +++++++++";
+		definir_posicion_cursor(a, 32); cout << "+                          .++++++++++++";
+		definir_posicion_cursor(a, 33); cout << "++.                     .+++++++++++++++";
+		definir_posicion_cursor(a, 34); cout << "++++..               .-+++++++++++++++++";
+		definir_posicion_cursor(a, 35); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 36); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 37); cout << "++++++++++++++++++++++++++++++++++++++++";
+
+
+	}
+	if (carta_numero == 0) {
+
+
+		colorear(0, 255, 0);
+		definir_posicion_cursor(a, 11); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 12); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 13); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 14); cout << "+++++++++++++++++++++++:.        .++++++";
+		definir_posicion_cursor(a, 15); cout << "+++++++++++++++++++:                .+++";
+		definir_posicion_cursor(a, 16); cout << "++++++++++++++++:                     .:";
+		definir_posicion_cursor(a, 17); cout << "+++++++++++++.                        ::";
+		definir_posicion_cursor(a, 18); cout << "++++++++++++      *******              :";
+		definir_posicion_cursor(a, 19); cout << "+++++++.       ************             ";
+		definir_posicion_cursor(a, 20); cout << "++++++        *****    *****            ";
+		definir_posicion_cursor(a, 21); cout << "+++++         ****      ****:           ";
+		definir_posicion_cursor(a, 22); cout << "+++           ****      ****:          :";
+		definir_posicion_cursor(a, 23); cout << "+++           ****      ****:         .:";
+		definir_posicion_cursor(a, 24); cout << "+.            ****      ****:         .+";
+		definir_posicion_cursor(a, 25); cout << ":             ****      ****:         ++";
+		definir_posicion_cursor(a, 26); cout << "              ****.    .****.       .+++";
+		definir_posicion_cursor(a, 27); cout << "               ************-       .++++";
+		definir_posicion_cursor(a, 28); cout << "                 *********        .+++++";
+		definir_posicion_cursor(a, 29); cout << "                                 :++++++";
+		definir_posicion_cursor(a, 30); cout << ":                               ++++++++";
+		definir_posicion_cursor(a, 31); cout << "+                             .+++++++++";
+		definir_posicion_cursor(a, 32); cout << "++                         .++++++++++++";
+		definir_posicion_cursor(a, 33); cout << "+++++                   .-++++++++++++++";
+		definir_posicion_cursor(a, 34); cout << "+++++++++            .++++++++++++++++++";
+		definir_posicion_cursor(a, 35); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 36); cout << "++++++++++++++++++++++++++++++++++++++++";
+		definir_posicion_cursor(a, 37); cout << "++++++++++++++++++++++++++++++++++++++++";
+	}
 }
