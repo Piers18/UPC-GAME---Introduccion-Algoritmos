@@ -40,25 +40,25 @@ void imprimir_logo_upc(){
 
 void imprimir_menu_rrague(){
     
-    colorear(0, 0, 200);    // Color azul
-	definir_posicion_cursor(10, 12); cout << " =++++++=-     -+++++++-.        .++++-         .-*#%%#*=.     -+++:    .+++=  .++++++++- ";
-	definir_posicion_cursor(10, 13); cout << " %@@@@@@@@%-   *@@@@@@@@@+       *@@@@%.       +@@@@@@@@@@*.   +@@@=    :@@@*  .@@@@@@@@+ ";
-	definir_posicion_cursor(10, 14); cout << " %@@@--*@@@@.  *@@@+-+@@@@-     :@@@@@@+      #@@@%+--=%@@@#   +@@@=    :@@@*  .@@@%++++: ";
-	definir_posicion_cursor(10, 15); cout << " %@@@.  %@@@:  *@@@-  *@@@=     #@@@#@@@:    =@@@%.     *+:    +@@@=    :@@@*  .@@@%      ";
-	definir_posicion_cursor(10, 16); cout << " %@@@--*@@@%   *@@@+-+@@@@:    =@@@+:@@@#    #@@@-   --------  +@@@=    :@@@*  .@@@@%%%%: ";
-	definir_posicion_cursor(10, 17); cout << " %@@@@@@@%*.   *@@@@@@@@#:    .@@@%. *@@@-   %@@@:   %@@@@@@%  +@@@=    :@@@*  .@@@@@@@@: ";
-	definir_posicion_cursor(10, 18); cout << " %@@@#@@@+     *@@@#@@@#.     *@@@%**#@@@%.  *@@@+   =++%@@@*  =@@@=    -@@@*  .@@@%::::  ";
-	definir_posicion_cursor(10, 19); cout << " %@@@#@@@+     *@@@#@@@#.     *@@@%**#@@@%.  *@@@+   =++%@@@*  =@@@=    -@@@*  .@@@%::::  ";
-	definir_posicion_cursor(10, 20); cout << " %@@@.*@@@*    *@@@-=@@@%.   -@@@@@@@@@@@@+  .@@@@+.   -@@@@:  :@@@%-  :%@@@=  .@@@%..... ";
-	definir_posicion_cursor(10, 21); cout << " %@@@. *@@@%.  *@@@- =@@@@-  %@@@=::::-%@@@:  :%@@@@%%@@@@%-    *@@@@@@@@@@+   .@@@@@@@@+ ";
-	definir_posicion_cursor(10, 22); cout << " #%%%   +%%%%: +%%%-  -%%%%==%%%*      =%%%*    =#@@@@@@#=.      -*@@@@@%*:    .%%%%%%%%= ";
+    colorear(0, 0, 255);    // Color azul
+	definir_posicion_cursor(5, 12); cout << " =++++++=-     -+++++++-.        .++++-         .-*#%%#*=.     -+++:    .+++=  .++++++++- ";
+	definir_posicion_cursor(5, 13); cout << " %@@@@@@@@%-   *@@@@@@@@@+       *@@@@%.       +@@@@@@@@@@*.   +@@@=    :@@@*  .@@@@@@@@+ ";
+	definir_posicion_cursor(5, 14); cout << " %@@@--*@@@@.  *@@@+-+@@@@-     :@@@@@@+      #@@@%+--=%@@@#   +@@@=    :@@@*  .@@@%++++: ";
+	definir_posicion_cursor(5, 15); cout << " %@@@.  %@@@:  *@@@-  *@@@=     #@@@#@@@:    =@@@%.     *+:    +@@@=    :@@@*  .@@@%      ";
+	definir_posicion_cursor(5, 16); cout << " %@@@--*@@@%   *@@@+-+@@@@:    =@@@+:@@@#    #@@@-   --------  +@@@=    :@@@*  .@@@@%%%%: ";
+	definir_posicion_cursor(5, 17); cout << " %@@@@@@@%*.   *@@@@@@@@#:    .@@@%. *@@@-   %@@@:   %@@@@@@%  +@@@=    :@@@*  .@@@@@@@@: ";
+	definir_posicion_cursor(5, 18); cout << " %@@@#@@@+     *@@@#@@@#.     *@@@%**#@@@%.  *@@@+   =++%@@@*  =@@@=    -@@@*  .@@@%::::  ";
+	definir_posicion_cursor(5, 19); cout << " %@@@#@@@+     *@@@#@@@#.     *@@@%**#@@@%.  *@@@+   =++%@@@*  =@@@=    -@@@*  .@@@%::::  ";
+	definir_posicion_cursor(5, 20); cout << " %@@@.*@@@*    *@@@-=@@@%.   -@@@@@@@@@@@@+  .@@@@+.   -@@@@:  :@@@%-  :%@@@=  .@@@%..... ";
+	definir_posicion_cursor(5, 21); cout << " %@@@. *@@@%.  *@@@- =@@@@-  %@@@=::::-%@@@:  :%@@@@%%@@@@%-    *@@@@@@@@@@+   .@@@@@@@@+ ";
+	definir_posicion_cursor(5, 22); cout << " #%%%   +%%%%: +%%%-  -%%%%==%%%*      =%%%*    =#@@@@@@#=.      -*@@@@@%*:    .%%%%%%%%= ";
 
-    colorear(0, 0, 200);
-	definir_posicion_cursor(10, 33); cout << "   ----------------------------------------------------------------------------------   ";
-	definir_posicion_cursor(10, 34); cout << "   ----------------------------------------------------------------------------------   ";
-	definir_posicion_cursor(10, 37); cout << "                                  [1] PLAY                                              ";
-	definir_posicion_cursor(10, 38); cout << "                                  [2] INSTRUCCIONES                                     ";
-	definir_posicion_cursor(10, 39); cout << "                                  [3] CREDITOS                                          ";
-	definir_posicion_cursor(10, 40); cout << "                                  [0] SALIR                                             ";
-	definir_posicion_cursor(10, 44); cout << "                                    -->                                                 ";
+    colorear(255, 255, 255);
+	definir_posicion_cursor(5, 33); cout << "   ----------------------------------------------------------------------------------   ";
+	definir_posicion_cursor(5, 34); cout << "   ----------------------------------------------------------------------------------   ";
+	definir_posicion_cursor(5, 37); cout << "                                  [1] PLAY                                              ";
+	definir_posicion_cursor(5, 38); cout << "                                  [2] INSTRUCCIONES                                     ";
+	definir_posicion_cursor(5, 39); cout << "                                  [3] CREDITOS                                          ";
+	definir_posicion_cursor(5, 40); cout << "                                  [0] SALIR                                             ";
+	definir_posicion_cursor(5, 44); cout << "                                    --> ";
 }

@@ -130,7 +130,7 @@ int generar_numero_partidas(){
 
 // Imprime el menu y sus opciones ademas verifica que la opcion ingresada es validad
 int imprimir_menu(){
-    int valor = 0;
+    int valor = 4;
 
     // Imprime el nombre del juego y las opciones del primer menu
     imprimir_menu_rrague();
@@ -146,8 +146,8 @@ int imprimir_menu(){
     }else if(valor == 0){
         return 0;
     }else{
-        valor = imprimir_menu();
-        return valor;
+        limpiar_pantalla();
+        return imprimir_menu();
     }
 }
 
@@ -233,7 +233,6 @@ int main(){
             dormir_terminal(5000);
             limpiar_pantalla();
         }
-
     }
 
     if(iniciar_partida == 0){
